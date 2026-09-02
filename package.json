@@ -1,0 +1,29 @@
+{
+  "name": "manufacturer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Issuer engine for the shekel-denominated bill fund. Exact fixed-point arithmetic, covered-interest-parity pricing, NAV strike, CFTC 4.13(a)(3) monitor, standing redemption facility.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "check": "npm run build && npm test",
+    "worked-example": "ts-node scripts/worked-example.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.0"
+  },
+  "engines": { "node": ">=20" },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": ["<rootDir>/test"],
+    "testRegex": ".*\\.spec\\.ts$",
+    "moduleNameMapper": { "^@/(.*)$": "<rootDir>/src/$1" }
+  }
+}
